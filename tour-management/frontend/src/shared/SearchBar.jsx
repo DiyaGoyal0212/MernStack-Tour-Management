@@ -1,8 +1,23 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import "./searchbar.css";
 import { Col,Form,FormGroup } from 'reactstrap';
 
 const SearchBar = () => {
+   const LocationRef = useRef('');
+   const distanceRef = useRef(0);
+   const maxGroupSixeRef =useRef(0);
+
+   const searchHnadler = () =>{
+    const location =LocationRef.current.value;
+    const distance =distanceRef.current.value;
+    const maxGroupSixe =maxGroupSixeRef.current.value;
+
+    if(location==='' || distance=== '' || maxGroupSixe===''){
+        return alert('All fields required');
+    }
+   }
+
+
   return <Col lg="12">
     <div className="search__bar">
         <Form className="d-flex align-items-center gap-4">
@@ -12,7 +27,7 @@ const SearchBar = () => {
                 </span>
                 <div>
                     <h6>Location</h6>
-                    <input type="text" placeholder='where are you going?'></input>
+                    <input type="text" placeholder='where are you going?' ref={LocationRef}></input>
                 </div>
             </FormGroup>
             <FormGroup className="d-flex gap-3 form__group form__group-fast">
@@ -21,7 +36,7 @@ const SearchBar = () => {
                 </span>
                 <div>
                     <h6>Distance</h6>
-                    <input type="number" placeholder='Distance k/m?'></input>
+                    <input type="number" placeholder='Distance k/m?' ref={distanceRef}></input>
                 </div>
             </FormGroup>
             <FormGroup className="d-flex gap-3 form__group form__group-last">
@@ -30,9 +45,13 @@ const SearchBar = () => {
                 </span>
                 <div>
                     <h6>Max People</h6>
-                    <input type="number" placeholder='No of people ?'></input>
+                    <input type="number" placeholder='No of people ?' ref={maxGroupSixeRef}></input>
                 </div>
             </FormGroup>
+
+            <span className="search__icon" type="submit">
+            <i class="ri-search-line"></i>
+            </span>
         </Form>
     </div>
   </Col>
