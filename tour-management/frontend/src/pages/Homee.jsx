@@ -9,7 +9,7 @@ import worldImg from '../assets/images/world.png'
 import SearchBar from '../shared/SearchBar'
 import ServiceList from '../services/ServiceList'
 import FeaturedTourList from '../components/featured tour/FeaturedTourList'
-import experienceImg from '../assets/images/experience.png'
+import experienceImg from '../assets/images/experinece.png'
 
 const Homee = () => {
   return (
@@ -141,6 +141,7 @@ const Homee = () => {
         <Row>
           <Col lg='12'>
           <Subtitle subtitle={'Gallery'} />
+          <h2 className="gallery__title"></h2>
           </Col>
         </Row>
       </Container>
