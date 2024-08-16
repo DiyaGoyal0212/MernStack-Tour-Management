@@ -10,6 +10,7 @@ import SearchBar from '../shared/SearchBar'
 import ServiceList from '../services/ServiceList'
 import FeaturedTourList from '../components/featured tour/FeaturedTourList'
 import experienceImg from '../assets/images/experinece.png'
+import MyGalllery from '../components/Image-gallery/MyGalllery'
 
 const Homee = () => {
   return (
@@ -141,11 +142,17 @@ const Homee = () => {
         <Row>
           <Col lg='12'>
           <Subtitle subtitle={'Gallery'} />
-          <h2 className="gallery__title"></h2>
+          <h2 className="gallery__title">Visit our customers tour gallery</h2>
+
+          </Col>
+          <Col lg='12'>
+          <MyGalllery />
           </Col>
         </Row>
       </Container>
     </section>
+
+    {/* testimonials */}
 
 
 
